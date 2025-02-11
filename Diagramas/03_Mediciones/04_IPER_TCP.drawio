@@ -1,0 +1,138 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Página-1" id="D5MHDsHGpUNMAVdxrfju">
+    <mxGraphModel dx="724" dy="1597" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-1" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=classic;endFill=1;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="_jtOsHuvPgag1ebwH7NC-17" target="_jtOsHuvPgag1ebwH7NC-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="76" as="targetPoint" />
+            <mxPoint x="220" y="26" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-2" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;b&gt;Filtro Wireshark&lt;/b&gt;&lt;br&gt;tcp.port==#&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="527.5" y="83" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_jtOsHuvPgag1ebwH7NC-4" target="_jtOsHuvPgag1ebwH7NC-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-4" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Captura del tráfico de la red mediante el software de Wireshark&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="132.5" y="76" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="_jtOsHuvPgag1ebwH7NC-7" target="_jtOsHuvPgag1ebwH7NC-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-7" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Segmentos TCP retransmitidos &amp;gt; 0&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="183" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_jtOsHuvPgag1ebwH7NC-9" target="_jtOsHuvPgag1ebwH7NC-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-9" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Utilizar la ecuación para cálcular el porcentaje de segmentos TCP con errores&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="205" width="160" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-10" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Si&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="270" y="198" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-11" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;No&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="140" y="198" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" parent="1" source="_jtOsHuvPgag1ebwH7NC-14" target="_jtOsHuvPgag1ebwH7NC-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="_jtOsHuvPgag1ebwH7NC-14" target="HgJo1eYcDP6OfQqCKxWP-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-14" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Identificar el número total de segmentos TCP asociados a un número de puerto especifico&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="76" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-15" value="Fin" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="434" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-16" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=classic;endFill=1;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="_jtOsHuvPgag1ebwH7NC-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="86" as="targetPoint" />
+            <mxPoint x="220" y="26" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-17" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Inicio&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="-4" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_jtOsHuvPgag1ebwH7NC-20" target="_jtOsHuvPgag1ebwH7NC-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" parent="1" source="_jtOsHuvPgag1ebwH7NC-20" target="HgJo1eYcDP6OfQqCKxWP-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-20" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Asociar los valores obtenidos acorde a los parámetros de la ecuación&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="273" width="160" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="_jtOsHuvPgag1ebwH7NC-23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="404" />
+              <mxPoint x="220" y="404" />
+            </Array>
+            <mxPoint x="390" y="404" as="sourcePoint" />
+            <mxPoint x="220" y="434" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_jtOsHuvPgag1ebwH7NC-23" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;El resultado obtenido corresponde al valor de medición del parámetro IPER&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="341" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="HgJo1eYcDP6OfQqCKxWP-1" target="HgJo1eYcDP6OfQqCKxWP-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HgJo1eYcDP6OfQqCKxWP-1" target="_jtOsHuvPgag1ebwH7NC-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="165" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-1" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Identificar el número de segmentos TCP retransmitidos del total de paquetes filtrados&amp;nbsp;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-2" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;b&gt;Filtro Wireshark&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;&quot;&gt;tcp.port==# and tcp.analysis.retransmission&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="520" y="150" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="HgJo1eYcDP6OfQqCKxWP-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="344" as="sourcePoint" />
+            <mxPoint x="220" y="434" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="105" y="404" />
+              <mxPoint x="220" y="404" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-7" value="Porcentaje de paquetes con errores&lt;br&gt;(I&lt;span style=&quot;background-color: initial;&quot;&gt;PER=0%)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="20" y="294" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="_jtOsHuvPgag1ebwH7NC-7" target="HgJo1eYcDP6OfQqCKxWP-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-11" value="&lt;div&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="520" y="193" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="_jtOsHuvPgag1ebwH7NC-9" target="HgJo1eYcDP6OfQqCKxWP-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="228" as="sourcePoint" />
+            <mxPoint x="490" y="228.2" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-15" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;Parámetros&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;C: Número de segmentos TCP retransmitidos&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;B: Número de segmentos TCP totales&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="517.5" y="270.5" width="212.5" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="HgJo1eYcDP6OfQqCKxWP-21" value="&lt;b&gt;Ecuación&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="575" y="190" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EyZfSVetVh5q2FezJcYE-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="553.13" y="220" width="103.74" height="31.81" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

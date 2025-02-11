@@ -1,0 +1,137 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.1 Chrome/128.0.6613.186 Electron/32.2.6 Safari/537.36" version="25.0.1">
+  <diagram name="Página-1" id="s3OMrO0p6jmiYu_DmSFK">
+    <mxGraphModel dx="1932" dy="1823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-2" target="tBCcmlrw2RseIQTRJ9dM-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-820" y="-1040" width="178.76" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;IDS_SNORT&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-789.81" y="-1037.25" width="118.38" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-4" value="&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;i style=&quot;font-size: 14px;&quot;&gt;Envia la alerta mediante un socket TCP&amp;nbsp; al puerto 51234 del controlador&lt;/i&gt;&lt;/font&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-810.6199999999999" y="-1020.25" width="160" height="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-6" target="tBCcmlrw2RseIQTRJ9dM-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-550" y="-1160.25" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-7" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Controlador SDN&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-449.19000000000005" y="-1156.25" width="118.38" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-8" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Recibe la alerta generada por SNORT&amp;nbsp; con la información del atacante e inicia la mitigación&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-540.01" y="-1136.25" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-389.99" y="-909.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-529.99" y="-1050" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-15" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Extracción de información del atacante&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-524.79" y="-1046" width="269.59" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-16" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;De la alerta recibida el controlador obtiene:&amp;nbsp;&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-529.39" y="-1022" width="282.79" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-17" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;IP Origen - MAC Origen&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;rounded=1;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-471.39" y="-990" width="162.79" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-22" target="tBCcmlrw2RseIQTRJ9dM-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-22" target="tBCcmlrw2RseIQTRJ9dM-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-22" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-522.49" y="-912" width="264.99" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-23" value="&lt;span style=&quot;font-size: 14px; font-weight: 400; line-height: 130%;&quot;&gt;&lt;i&gt;Desde: Primer conmutador&lt;br&gt;&lt;/i&gt;&lt;i style=&quot;line-height: 18.2px;&quot;&gt;Iterando: Cada uno&lt;/i&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400; line-height: 130%;&quot;&gt;&lt;i&gt;Hasta:Último conmutador&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-498.79" y="-887" width="190.19" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-24" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Función de mitigación&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-471.39000000000004" y="-907" width="169.6" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-25" target="tBCcmlrw2RseIQTRJ9dM-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="-790" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-28" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Proceso 1&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-427.4" y="-786" width="74.79" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-29" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i style=&quot;line-height: 130%;&quot;&gt;Identifica el datapath_id del conmutador&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-480" y="-766" width="180" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-30" target="tBCcmlrw2RseIQTRJ9dM-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-30" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-530" y="-678" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-31" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Proceso 2&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-432.39" y="-678" width="84.81" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-33" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Establece nueva regla de flujo:&lt;/i&gt;&lt;/span&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-498.79" y="-658" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-34" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Prioridad: 150&lt;br&gt;Coincidencia: MAC Origen del Atacante&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Acción: Denegar el tráfico&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Tabla de flujos: 0&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-522.49" y="-637" width="263" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-36" target="tBCcmlrw2RseIQTRJ9dM-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-650" y="-490" />
+              <mxPoint x="-650" y="-867" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-36" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-499.99" y="-530" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-37" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Proceso 3&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-427.39" y="-526" width="74.79" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-38" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i style=&quot;line-height: 130%;&quot;&gt;Anadir nueva regla de flujo al conmutador SDN&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-499.99" y="-506" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-43" target="tBCcmlrw2RseIQTRJ9dM-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-43" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="-907" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-45" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i style=&quot;line-height: 130%;&quot;&gt;Mitgación implementada en&amp;nbsp; todos los conmutadores&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-165" y="-883" width="190" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-48" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Función de mitigación&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-154.80000000000007" y="-903" width="169.6" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="tBCcmlrw2RseIQTRJ9dM-49" target="tBCcmlrw2RseIQTRJ9dM-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-49" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-190" y="-783" width="240" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-51" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Conmutadores SDN&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="-154.80000000000007" y="-781" width="169.6" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-52" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Rechazan todo tipo de tráfico generado por los atacantes en base a su MAC&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-185" y="-756" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-53" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;FIN&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="-637" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

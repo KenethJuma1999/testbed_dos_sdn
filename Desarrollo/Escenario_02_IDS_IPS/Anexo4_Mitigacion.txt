@@ -1,0 +1,39 @@
+#----------Iniciar ejecución controlador SDN------------------#
+teryu-manager ryu.app.rest_qos ryu.app.testbed02_mitigacion ryu.app.rest_conf_switch flowmanager-master/flowmanager.py 
+
+#-------------Instalación de Snort--------------------
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt-get install libpcap-dev libpcre3-dev libdumbnet-dev
+sudo apt-get install bison flex
+sudo apt-get install snort
+
+#Ejecutar SNORT
+sudo snort -A console -i enp0s8 -A unsock -l /tmp -c /etc/snort/snort.conf
+snort -i enp0s8 -A unsock -l /tmp -c /etc/snort/snort.conf
+
+#Ejecutar controlador IDS-IPS
+ryu-manager --verbose simple_switch_snort.py flowmanager-master/flowmanager.py 
+
+#--------------------------------Open Vswitch4-----------------------
+ovs-vsctl set bridge br0 other-config:datapath-id=0000000000000004
+ovs-vsctl set bridge br0 protocols=OpenFlow13
+
+#--------------------------------------------------------------------
+#Elimina las reglas por defecto 
+ovs-ofctl -O OpenFlow13 del-flows br0
+
+#Anadir reglas de direccionamiento al IDS
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=0,dl_type=0x0800,nw_proto=1,icmp_type=8,actions=goto_table:1"
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=0,dl_type=0x0800,nw_proto=6,actions=goto_table:1"
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=0,dl_type=0x0800,nw_proto=17,actions=goto_table:1"
+
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,actions=output:7"
+
+
+#Verificar reglas
+ovs-ofctl -O OpenFlow13 dump-flows br0
+
+
+
+

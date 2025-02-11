@@ -1,0 +1,206 @@
+#----------Crear archivo QoS------------------#
+sed '/OFPFlowMod(/,/)/s/)/, table_id=1)/' /usr/local/lib/python3.8/dist-packages/ryu/app/simple_switch_13.py > /usr/local/lib/python3.8/dist-packages/ryu/app/qos_simple_switch_13.py
+
+#----------Iniciar ejecución controlador SDN------------------#
+ryu-manager ryu.app.rest_qos ryu.app.qos_simple_switch_13 ryu.app.rest_conf_switch flowmanager-master/flowmanager.py 
+
+#----------Iniciar ejecución controlador SDN (Escenario 02)------------------#
+ryu-manager ryu.app.rest_qos ryu.app.test02 ryu.app.rest_conf_switch flowmanager-master/flowmanager.py
+--------------------------------Open Vswitch4-----------------------
+ovs-ofctl del-flows br0
+ovs-vsctl del-port br0 eth0
+ovs-vsctl set-controller br0 tcp:192.168.11.10:6633
+ovs-vsctl set bridge br0 other-config:datapath-id=000000000000000
+ovs-vsctl set bridge br0 protocols=OpenFlow13
+ovs-vsctl set-manager ptcp:6632
+
+
+#----------COnfigurar OVSDB------------------------------------
+curl -X PUT -d "tcp:192.168.11.3:6632" http://localhost:8080/v1.0/conf/switches/0000000000000001/ovsdb_addr
+curl -X PUT -d "tcp:192.168.11.4:6632" http://localhost:8080/v1.0/conf/switches/0000000000000002/ovsdb_addr
+curl -X PUT -d "tcp:192.168.11.5:6632" http://localhost:8080/v1.0/conf/switches/0000000000000003/ovsdb_addr
+
+#-----------Creación de colas-------------------
+#MIN_RATE_VOZ=38000000   # 38% de 100 Mbps
+#MIN_RATE_SIP=7000000    # 7% de 100 Mbps
+#MIN_RATE_VOD=7000000    # 7% de 100 Mbps
+#MIN_RATE_FTP=3000000    # 3% de 100 Mbps
+#MIN_RATE_WEB=19000000   # 19% de 100 Mbps
+#MIN_RATE_DEFAULT=17000000 # restante para class-default (17%)
+
+#----------------------OpenVswitch1-----------------------#
+# Configurar colas en ovs1 en eth1
+ovs-vsctl set port eth1 qos=@newqos -- \
+--id=@newqos create qos type=linux-htb other-config:max-rate=100000000 queues=0=@q0,1=@q1,2=@q2,3=@q3,4=@q4,5=@q5 -- \
+--id=@q0 create queue other-config:max-rate=100000000 other-config:min-rate=38000000 -- \
+--id=@q1 create queue other-config:max-rate=100000000 other-config:min-rate=7000000 -- \
+--id=@q2 create queue other-config:max-rate=100000000 other-config:min-rate=7000000 -- \
+--id=@q3 create queue other-config:max-rate=100000000 other-config:min-rate=3000000 -- \
+--id=@q4 create queue other-config:max-rate=100000000 other-config:min-rate=19000000 -- \
+--id=@q5 create queue other-config:max-rate=100000000 other-config:min-rate=17000000
+
+
+# Configurar colas en ovs1 en eth2
+ovs-vsctl set port eth2 qos=ce02283c-25b9-40f9-a8e7-0cc852c95285
+
+#----------------------OpenVswitch2-----------------------#
+# Configurar colas en ovs2 en eth2
+ovs-vsctl set port eth2 qos=@newqos -- \
+--id=@newqos create qos type=linux-htb other-config:max-rate=100000000 queues=0=@q0,1=@q1,2=@q2,3=@q3,4=@q4,5=@q5 -- \
+--id=@q0 create queue other-config:max-rate=100000000 other-config:min-rate=38000000 -- \
+--id=@q1 create queue other-config:max-rate=100000000 other-config:min-rate=7000000 -- \
+--id=@q2 create queue other-config:max-rate=100000000 other-config:min-rate=7000000 -- \
+--id=@q3 create queue other-config:max-rate=100000000 other-config:min-rate=3000000 -- \
+--id=@q4 create queue other-config:max-rate=100000000 other-config:min-rate=19000000 -- \
+--id=@q5 create queue other-config:max-rate=100000000 other-config:min-rate=17000000
+
+# Configurar colas en ovs2 en eth3
+ovs-vsctl set port eth3 qos=c948bc6d-7495-44dc-bd90-161377afce62
+
+
+#----------------------OpenVswitch3-----------------------#
+# Configurar colas en ovs3 en eth1
+ovs-vsctl set port eth1 qos=@newqos -- \
+--id=@newqos create qos type=linux-htb other-config:max-rate=100000000 queues=0=@q0,1=@q1,2=@q2,3=@q3,4=@q4,5=@q5 -- \
+--id=@q0 create queue other-config:max-rate=100000000 other-config:min-rate=38000000 -- \
+--id=@q1 create queue other-config:max-rate=100000000 other-config:min-rate=7000000 -- \
+--id=@q2 create queue other-config:max-rate=100000000 other-config:min-rate=7000000 -- \
+--id=@q3 create queue other-config:max-rate=100000000 other-config:min-rate=3000000 -- \
+--id=@q4 create queue other-config:max-rate=100000000 other-config:min-rate=19000000 -- \
+--id=@q5 create queue other-config:max-rate=100000000 other-config:min-rate=17000000
+
+
+# Configurar colas en ovs3 en eth2
+ovs-vsctl set port eth2 qos=240eccd2-d875-4236-b1cb-9b14818cd783
+
+#------------------ovs1-----------
+voz-out 38
+sip-out 7
+vod-out 7
+ftp-out 3
+web-out 19
+
++---------+--------------------------------------+------------------+-----------------+
+| Cola #  | Identificador                        | max-rate (bps)   | min-rate (bps)  |
++---------+--------------------------------------+------------------+-----------------+
+| 0       | b4d51860-cf60-4757-aa41-2d5bb2b47053 | 100000000        | 38000000        |
+| 1       | ef110324-1425-45ee-a554-2f7321967e80 | 100000000        | 7000000         |
+| 2       | 1e7ff32c-c5af-4a54-bffa-1b153fcdf138 | 100000000        | 7000000         |
+| 3       | df764b2b-733f-4eba-a652-8a4c49e1fea2 | 100000000        | 3000000         |
+| 4       | ff6d84c6-add3-491a-9208-a09fa012d33d | 100000000        | 19000000        |
+| 5       | 7e4e0824-7e62-4ecc-8289-78a40470764c | 100000000        | 17000000        |
++---------+--------------------------------------+------------------+-----------------+
+
+
+#------------------ovs2-----------
+0 Número de Cola | Identificador                                   | Max Rate   | Min Rate
+---------------|------------------------------------------------|------------|----------
+0              | 351ccdda-6d40-4769-a7f1-a89ae65a05c6           | 100000000  | 38000000
+1              | b8688150-18e6-4f95-ba03-3c07359e7f70           | 100000000  | 7000000
+2              | 6088486a-fb55-40f6-b642-40d05eeda357           | 100000000  | 7000000
+3              | 4a1ee028-afd7-48cf-a302-cd1b44552f38           | 100000000  | 3000000
+4              | 977317a2-60ce-4372-ae0b-2831f0f26061           | 100000000  | 19000000
+5              | af5832a0-6566-47b7-8bf4-b5460c7b046b           | 100000000  | 17000000
+
+#------------------ovs3-----------
+Número de Cola | Identificador                             | Max Rate (bps) | Min Rate (bps)
+---------------|-------------------------------------------|----------------|---------------
+0              | 09211f5d-5b3a-42cc-bea5-970574625475     | 100000000      | 38000000
+1              | 2b375bf0-9534-4bae-9194-b07ed1ec068d     | 100000000      | 7000000
+2              | 936ff5ca-9e75-4152-a8a4-5ccc546614ef     | 100000000      | 7000000
+3              | a95f46e4-67d1-4c7b-a3b3-04aa08238fb4     | 100000000      | 3000000
+4              | 3e3c95b2-5444-41e7-b98f-08e3f5a97507     | 100000000      | 19000000
+5              | 60092d4d-1030-40d9-9f96-3cf7ac766ff4     | 100000000      | 17000000
+
+
+
+#------------------Encolamiento-----------------------#
+
+#Marca  | Valor DSCP | Binario| Prioridad |
+#-------|------------|--------|-----------|
+#EF     | 46         | 101110 |  5000     |
+#CS3    | 24         | 011000 |  4000     |
+#AF43   | 38         | 100110 |  3000     |
+#AF33   | 30         | 011110 |  2000     |
+#AF23   | 22         | 010110 |  1000     |
+#Default| 0          | 000000 |		  |
+
+
+#-------------------OpenVswitch-1-----------------------
+# EF (Expedited Forwarding)
+curl -X POST -d '{"priority": "100", "match": {"ip_dscp": "46"}, "actions":{"queue": "0"}}' http://localhost:8080/qos/rules/0000000000000001
+
+# CS3 (Class Selector 3)
+curl -X POST -d '{"priority": "90", "match": {"ip_dscp": "24"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000001
+
+# AF43 (Assured Forwarding 4, Class 3)
+curl -X POST -d '{"priority": "80", "match": {"ip_dscp": "38"}, "actions":{"queue": "2"}}' http://localhost:8080/qos/rules/0000000000000001
+
+# AF33 (Assured Forwarding 3, Class 3)
+curl -X POST -d '{"priority": "70", "match": {"ip_dscp": "30"}, "actions":{"queue": "3"}}' http://localhost:8080/qos/rules/0000000000000001
+
+# AF23 (Assured Forwarding 2, Class 3)
+curl -X POST -d '{"priority": "60", "match": {"ip_dscp": "22"}, "actions":{"queue": "4"}}' http://localhost:8080/qos/rules/0000000000000001
+
+
+#-------------------OpenVswitch-2-----------------------
+
+# EF (Expedited Forwarding)
+curl -X POST -d '{"priority": "100", "match": {"ip_dscp": "46"}, "actions":{"queue": "0"}}' http://localhost:8080/qos/rules/0000000000000002
+
+# CS3 (Class Selector 3)
+curl -X POST -d '{"priority": "90", "match": {"ip_dscp": "24"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000002
+
+# AF43 (Assured Forwarding 4, Class 3)
+curl -X POST -d '{"priority": "80", "match": {"ip_dscp": "38"}, "actions":{"queue": "2"}}' http://localhost:8080/qos/rules/0000000000000002
+
+# AF33 (Assured Forwarding 3, Class 3)
+curl -X POST -d '{"priority": "70", "match": {"ip_dscp": "30"}, "actions":{"queue": "3"}}' http://localhost:8080/qos/rules/0000000000000002
+
+# AF23 (Assured Forwarding 2, Class 3)
+curl -X POST -d '{"priority": "60", "match": {"ip_dscp": "22"}, "actions":{"queue": "4"}}' http://localhost:8080/qos/rules/0000000000000002
+
+#-------------------OpenVswitch-3-----------------------
+# EF (Expedited Forwarding)
+curl -X POST -d '{"priority": "100", "match": {"ip_dscp": "46"}, "actions":{"queue": "0"}}' http://localhost:8080/qos/rules/0000000000000003
+
+# CS3 (Class Selector 3)
+curl -X POST -d '{"priority": "90", "match": {"ip_dscp": "24"}, "actions":{"queue": "1"}}' http://localhost:8080/qos/rules/0000000000000003
+
+# AF43 (Assured Forwarding 4, Class 3)
+curl -X POST -d '{"priority": "80", "match": {"ip_dscp": "38"}, "actions":{"queue": "2"}}' http://localhost:8080/qos/rules/0000000000000003
+
+# AF33 (Assured Forwarding 3, Class 3)
+curl -X POST -d '{"priority": "70", "match": {"ip_dscp": "30"}, "actions":{"queue": "3"}}' http://localhost:8080/qos/rules/0000000000000003	
+
+# AF23 (Assured Forwarding 2, Class 3)
+curl -X POST -d '{"priority": "60", "match": {"ip_dscp": "22"}, "actions":{"queue": "4"}}' http://localhost:8080/qos/rules/0000000000000003
+
+
+
+#---------------Verificar configuraciones------------------------#
+curl -X GET http://192.168.11.10:8080/qos/rules/0000000000000001
+curl -X GET http://192.168.11.10:8080/qos/rules/0000000000000002
+curl -X GET http://192.168.11.10:8080/qos/rules/0000000000000003
+
+
+
+#---------------------ELiminar colas-------------------------
+ovs-vsctl clear port eth1 qos
+ovs-vsctl clear port eth2 qos
+ovs-vsctl clear port eth3 qos
+
+
+ovs-vsctl destroy qos (id-qos)
+ovs-vsctl destroy qos (id-qos)
+
+ovs-vsctl destroy queue (id_colas)
+
+
+#------------verificar 
+
+ovs-vsctl list qos
+ovs-vsctl list queue
+
+
+

@@ -1,0 +1,137 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="Página-1" id="s3OMrO0p6jmiYu_DmSFK">
+    <mxGraphModel dx="2345" dy="1900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-2" target="tBCcmlrw2RseIQTRJ9dM-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-820" y="-1040" width="178.76" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-3" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;IDS_SNORT&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-789.81" y="-1037.25" width="118.38" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-4" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Send the alert via a TCP socket to port 51234 of the controller.&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-810.6199999999999" y="-1020.25" width="160" height="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-6" target="tBCcmlrw2RseIQTRJ9dM-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-550" y="-1160.25" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-7" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;SDN Controller&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-449.19000000000005" y="-1156.25" width="118.38" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-8" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Receives the SNORT-generated alert with the attacker&#39;s information and initiates mitigation&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-540.01" y="-1136.25" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-389.99" y="-909.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-540" y="-1050" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-15" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Extraction of information from the attacker&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-536.79" y="-1048" width="294.79" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-16" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;From the received alert the controller obtains:&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-519" y="-1030" width="265" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-17" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Source IP - Source MAC&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;rounded=1;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-471.39" y="-990" width="162.79" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-22" target="tBCcmlrw2RseIQTRJ9dM-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-22" target="tBCcmlrw2RseIQTRJ9dM-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-22" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-522.49" y="-912" width="264.99" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-23" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;From: First switch&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Iterating: Each&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;To: Last switch&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-498.79" y="-887" width="190.19" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-24" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Mitigation function&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-471.39000000000004" y="-907" width="169.6" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-25" target="tBCcmlrw2RseIQTRJ9dM-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-500" y="-790" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-28" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Process 1&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-427.4" y="-786" width="77.4" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-29" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Identifies the switch datapath_id&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-495.99" y="-759.5" width="210" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-30" target="tBCcmlrw2RseIQTRJ9dM-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-30" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-530" y="-678" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-31" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;Process 2&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-432.39" y="-678" width="84.81" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-33" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;Establishes new flow rule:&lt;/span&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-498.79" y="-658" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-34" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Priority: 150&lt;br&gt;Match: Attacker&#39;s MAC&#39; Originator&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Action: Deny traffic&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Flow table: 0&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=left;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-522.49" y="-637" width="263" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-36" target="tBCcmlrw2RseIQTRJ9dM-22" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-650" y="-490" />
+              <mxPoint x="-650" y="-867" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-36" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-499.99" y="-530" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-37" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;Process 3&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-427.39" y="-526" width="74.79" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-38" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Adding a new flow rule to the SDN switch&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-499.99" y="-506" width="220" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-43" target="tBCcmlrw2RseIQTRJ9dM-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-43" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="-907" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-45" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Mitgation implemented in all switches&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-165" y="-883" width="190" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-48" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Mitigation function&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-154.80000000000007" y="-903" width="169.6" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="tBCcmlrw2RseIQTRJ9dM-49" target="tBCcmlrw2RseIQTRJ9dM-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-49" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-190" y="-783" width="240" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-51" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;SDN Switches&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-154.80000000000007" y="-781" width="169.6" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-52" value="&lt;span style=&quot;font-size: 14px; font-weight: 400;&quot;&gt;&lt;i&gt;Reject all kinds of traffic generated by attackers based on their MAC&lt;/i&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;fontStyle=1;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="-185" y="-752" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="tBCcmlrw2RseIQTRJ9dM-53" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;FIN&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="-110" y="-637" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

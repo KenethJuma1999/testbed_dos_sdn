@@ -1,0 +1,286 @@
+
+#--------------------------Levantamiento de interfaces y enrutamniento OSPF----------------
+--------------------R1-------------------
+conf t 
+int lo0
+ip add 1.1.1.1 255.255.255.255
+no sh
+ip ospf 1 area 0
+exit
+int g0/0
+ip add 192.168.11.33 255.255.255.240
+no sh
+ip ospf 1 area 0
+int g2/0
+ip add 192.168.11.1 255.255.255.224
+no sh
+ip ospf 1 area 0
+exit
+int g1/0
+ip add dhcp
+no sh
+ip ospf 1 area 0
+exit
+end
+
+--------------------R2-------------------
+conf t 
+int lo0
+ip add 2.2.2.2 255.255.255.255
+no sh
+ip ospf 1 area 0
+exit
+int g0/0
+ip add 192.168.11.2 255.255.255.224
+no sh
+ip ospf 1 area 0
+exit
+int g1/0
+ip add 192.168.11.97 255.255.255.252
+no sh
+ip ospf 1 area 0
+exit
+int g2/0
+ip add 192.168.11.49 255.255.255.240
+no sh
+ip ospf 1 area 0
+end
+
+--------------------R3-------------------
+conf t 
+int lo0
+ip add 3.3.3.3 255.255.255.255
+no sh
+ip ospf 1 area 0
+exit
+int g0/0
+ip add 192.168.11.65 255.255.255.240
+no sh
+ip ospf 1 area 0
+exit
+int g1/0
+ip add 192.168.11.98 255.255.255.252
+no sh
+ip ospf 1 area 0
+exit
+int g2/0
+ip add 192.168.11.101 255.255.255.252
+no sh
+ip ospf 1 area 0
+end
+
+--------------------R4-------------------
+conf t 
+int lo0
+ip add 4.4.4.4 255.255.255.255
+no sh
+ip ospf 1 area 0
+exit
+int g0/0
+ip add 192.168.11.81 255.255.255.240
+no sh
+ip ospf 1 area 0
+exit
+int g2/0
+ip add 192.168.11.102 255.255.255.252
+no sh
+ip ospf 1 area 0
+end
+
+#-----------------------------Configuración servidores DHCP-------------------------------
+
+#------------R2
+conf t
+interface g2/0
+ip dhcp excluded-address 192.168.11.49
+ip dhcp pool LAN_R2
+network 192.168.11.48 255.255.255.240
+default-router 192.168.11.49
+dns-server 8.8.8.8
+domain-name google.com
+lease 5
+end
+
+#------------R3
+conf t
+interface g0/0
+ip dhcp excluded-address 192.168.11.65
+ip dhcp pool LAN_R3
+network 192.168.11.64 255.255.255.240
+default-router 192.168.11.65
+dns-server 8.8.8.8
+domain-name google.com
+lease 5
+end
+
+#------------R4
+conf t
+interface g0/0
+ip dhcp excluded-address 192.168.11.81
+ip dhcp pool LAN_R4
+network 192.168.11.80 255.255.255.240
+default-router 192.168.11.81
+dns-server 8.8.8.8
+domain-name google.com
+lease 5
+end
+
+----------------------QoS-----------------------------------------------------------------------------
+------------------------ACLS--------------
+----------Calidad de servicio --------------
+********ROUTER R1********
+conf te
+int g0/0
+ip nbar protocol-discovery
+exit
+int g2/0
+ip nbar protocol-discovery
+exit
+#Marcar VoIP con EF
+access-list 101 permit ip any any dscp ef
+
+#Marcar SIP con CS3
+access-list 102 permit ip any any dscp cs3
+
+#Clasificar y marcar VoD con AF43
+access-list 103 permit ip any any dscp af43
+access-list 103 permit tcp any eq 8096 any
+
+#Marcar FTP con AF33
+access-list 104 permit ip any any dscp af33
+
+#Marcar HTTP con AF23
+access-list 105 permit ip any any dscp af23
+
+#Clasificar puertos RTP
+access-list 106 permit udp any range 10000 20000 any
+
+#////Clases//////
+
+#VoIP
+class-map match-any voz
+match protocol rtp audio
+match access-group 106
+exit
+
+class-map match-all voz-out
+match access-group 101
+exit
+
+#sip
+class-map match-all sip
+match protocol sip
+exit
+
+class-map match-all sip-out
+match access-group 102
+exit
+
+#VoD
+class-map match-any vod
+match access-group 103
+exit
+
+class-map match-all vod-out
+match access-group 103
+exit
+
+#ftp
+class-map match-any ftp
+match protocol ftp
+exit
+
+class-map match-all ftp-out
+match access-group 104
+exit
+
+#web
+class-map match-any web
+match protocol http
+exit
+
+class-map match-all web-out
+match access-group 105
+exit
+
+#////Politicas//////
+
+policy-map testbed_policy
+
+class voz-out
+priority percent 38
+exit
+
+class sip-out
+bandwidth percent 7
+exit
+
+class vod-out
+priority percent 7
+exit
+
+class ftp-out
+priority percent 3
+exit
+
+class web-out
+priority percent 19
+exit
+
+class class-default
+fair-queue
+exit
+end
+
+
+#///Marcajes/////
+conf t
+policy-map testbed_mark
+
+class voz
+set ip dscp ef
+exit
+
+class sip
+set ip dscp af31
+exit
+
+class vod
+set ip dscp af43
+exit
+
+class ftp
+set ip dscp af33
+exit
+
+class web
+set ip dscp af23
+exit
+end
+
+
+##///Asignacion///
+
+conf t
+ip cef
+
+int g0/0
+service-policy input testbed_mark
+exit
+
+int g2/0
+service-policy output testbed_policy
+exit
+end
+
+
+
+conf t
+policy-map testbed_mark
+no class sip
+class sip
+set ip dscp af31
+exit
+end
+wr
+

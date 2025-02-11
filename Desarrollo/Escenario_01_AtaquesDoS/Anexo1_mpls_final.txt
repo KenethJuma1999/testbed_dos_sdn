@@ -1,0 +1,66 @@
+--------------------------------Open Vswitch1-----------------------
+ovs-ofctl del-flows br0
+ovs-vsctl del-port br0 eth0
+ovs-vsctl set-controller br0 tcp:192.168.11.10:6633
+ovs-vsctl set bridge br0 other-config:datapath-id=0000000000000001
+ovs-vsctl set bridge br0 protocols=OpenFlow13
+ovs-vsctl set-manager ptcp:6632
+
+--------------------------------Open Vswitch2-----------------------
+ovs-ofctl del-flows br0
+ovs-vsctl del-port br0 eth0
+ovs-vsctl set-controller br0 tcp:192.168.11.10:6633
+ovs-vsctl set bridge br0 other-config:datapath-id=0000000000000002
+ovs-vsctl set bridge br0 protocols=OpenFlow13
+ovs-vsctl set-manager ptcp:6632
+--------------------------------Open Vswitch3-----------------------
+ovs-ofctl del-flows br0
+ovs-vsctl del-port br0 eth0
+ovs-vsctl set-controller br0 tcp:192.168.11.10:6633
+ovs-vsctl set bridge br0 other-config:datapath-id=0000000000000003
+ovs-vsctl set bridge br0 protocols=OpenFlow13
+ovs-vsctl set-manager ptcp:6632
+
+-------------- VER REGLAS DE FLUJO -------------------------
+ovs-ofctl -O OpenFlow13 dump-flows br0
+
+
+IPv4<------------->|port2|--sw1--|port3|<------->|port3|--sw2--|port4|<-------->|port3|--sw3---|port2|<------>IPv4
+
+###### Rules at S1 ######
+echo "Setting up rules at s1"
+
+# Si viene por el puerto 1 y es un paquete IPv4 UDP:
+# aplicar etiqueta MPLS 12 y enviar por el puerto 2
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,priority=100,in_port=2,eth_type=0x800,ip_proto=17,actions=push_mpls:0x8847,set_field:122->mpls_label,output:3"
+
+# Si viene por el puerto 2 y es un paquete MPLS unicast con etiqueta 21:
+# quitar etiqueta, establecer ethertype como IPv4 y enviar por el puerto 1
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,priority=100,in_port=3,eth_type=0x8847,mpls_bos=1,mpls_label=21,actions=pop_mpls:0x0800,output:2"
+
+
+ovs-ofctl -O OpenFlow13 dump-flows br0
+
+###### Rules at S2 ######
+echo "Setting up rules at s2"
+
+# IPV4: Pop old label push new label
+
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,priority=100,in_port=3,eth_type=0x8847,mpls_label=122,actions=pop_mpls:0x800, push_mpls:0x8847,set_field:23->mpls_label,output:4"
+
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,priority=100,in_port=4,eth_type=0x8847,mpls_label=32,actions=pop_mpls:0x800, push_mpls:0x8847,set_field:21->mpls_label,output:3"
+
+ovs-ofctl -O OpenFlow13 dump-flows br0
+
+###### Rules at S3 ######
+echo "Setting up rules at s3"
+
+# Si viene por el puerto 1 y es un paquete IPv4 UDP:
+# aplicar etiqueta MPLS 32 y enviar por el puerto 2
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,priority=100,in_port=2,eth_type=0x800,ip_proto=17,actions=push_mpls:0x8847,set_field:32->mpls_label,output:3"
+
+# Si viene por el puerto 2 y es un paquete MPLS unicast con etiqueta 23:
+# quitar etiqueta, establecer ethertype como IPv4 y enviar por el puerto 1
+ovs-ofctl -O OpenFlow13 add-flow br0 "table=1,priority=100,in_port=3,eth_type=0x8847,mpls_bos=1,mpls_label=23,actions=pop_mpls:0x0800,output:2"
+
+ovs-ofctl -O OpenFlow13 dump-flows br0
